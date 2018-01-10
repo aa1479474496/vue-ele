@@ -26,7 +26,7 @@ export const constantRouterMap = [
     component: Layout,
     redirect: 'noredirect',
     children: [{
-      path: 'index',
+      path: '',
       component: () => import('@/components/home/Home.vue'),
       name: 'home',
       meta: { title: 'home', icon: 'el-icon-message' }
@@ -47,8 +47,18 @@ export const constantRouterMap = [
       { path: 'table3', name: 'table3', meta: { title: 'table3' }, component: () => import('@/components/table/table3.vue') },
     ]
   },
-  { path: '*', component: () => import('@/components/404.vue'), hidden: true },
+  {
+    path: '*',
+    component: Layout,
+    children: [{
+      path: '',
+      component: () => import('@/components/404.vue'),
+    }], 
+    hidden: true
+  },
 ]
+
+
 
 export const asyncRouterMap = [
   {

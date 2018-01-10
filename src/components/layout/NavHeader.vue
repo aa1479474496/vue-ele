@@ -4,7 +4,7 @@
       width="220" trigger="click" v-if="isPhone">
       <menu-items></menu-items>
     </el-popover>
-    <i class="el-icon-tickets toggle-show" v-if="isPhone" v-popover:popover4></i>
+    <span class="el-icon-tickets" v-if="isPhone" v-popover:popover4></span>
     Header
   </h1>
 </template>
@@ -24,7 +24,6 @@
     },
     computed: {
       ...mapGetters([
-        'routers',
         'siderClass',
       ]),
       isPhone() {
@@ -40,5 +39,8 @@
 <style scoped>
   .header {
     border-bottom: 1px solid skyblue;
+  }
+  .el-icon-tickets {
+    cursor: pointer;
   }
 </style>
