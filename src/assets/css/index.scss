@@ -1,0 +1,193 @@
+// 侧边栏在 1300 的样式 ，.hidebar 为 1300以下
+
+$sider-bac-color: #303641; //侧边栏背景色， 深蓝色
+$menuitem-bac-color: #282c37; //侧边栏展开背景色，， 更深蓝
+$item-hover-color: #ee473c; // 展开栏hover背景色
+
+
+
+.sider {
+  width: 220px;
+  padding: 10px 0;
+  background: $sider-bac-color;
+  position: absolute;
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100vh;
+  -webkit-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
+  color: #999;
+  box-sizing: border-box;
+
+  &.phoneNav {
+    width: 0;
+    overflow: hidden;
+  }
+
+  &.hideNavBar {
+    width: 64px;
+    // overflow: hidden;
+    .submenu-title-noDropdown {
+      padding-left: 18px!important;
+      text-align: center;
+      position: relative;
+      
+      span {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: opacity .1s cubic-bezier(.55, 0, .1, 1);
+        opacity: 0;
+        display: inline-block;
+      }
+      &:hover {
+        span {
+          display: block;
+          z-index: 1002;
+          width: 214px;
+          height: 42px;
+          line-height: 42px;
+          visibility: visible;
+          position: absolute;
+          right: -214px;
+          text-align: left;
+          text-indent: 40px;
+          top: 0px;
+          background-color:#262b34;
+          opacity: 1;
+          &:hover {
+            background-color: $item-hover-color;
+          }
+        }
+        
+      }
+    }
+    .el-submenu {
+      &>.el-submenu__title {
+        padding-left: 18px!important;
+        text-align: center;
+        &>span {
+          display: none;
+        }
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+      .nest-menu {
+        .el-submenu__icon-arrow {
+          display: block!important;
+        }
+        span {
+          display: inline-block!important;
+        }
+      }
+    }
+
+    // 侧边栏折叠的样式
+    .el-menu--collapse {
+      // width: 60px;      
+      .el-submenu .el-menu {
+        margin-left: 0;
+        border: 0;
+        border-radius: 0;
+
+        .el-menu-item {
+          width: 214px;
+          padding-left: 40px!important;
+        }
+      }
+    }
+  }
+
+  .logo {
+    text-align: center;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    font-size: 0;
+  }
+  
+  .logo span {
+    margin-left: 6px;
+    vertical-align: middle;
+    font-size: 36px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  .toggle-show {
+    vertical-align: middle;
+    font-size: 25px;
+  }
+
+}
+
+.self-menus {
+  a {
+    display: block;
+  }
+  .router-link-active {
+    span {
+      color: skyblue;
+    }
+    i {
+      color: green;
+    }
+  }
+  .el-menu-item, .el-submenu__title {
+    height: 42px;
+    line-height: 42px;
+  }
+  .el-submenu .el-menu-item {
+    padding-left: 60px!important;
+  }
+  .is-opened { // 当前展开时的背景色
+
+    &>.el-submenu__title {
+      background-color: $menuitem-bac-color!important;
+    }
+  
+    & li {
+      background-color: $menuitem-bac-color!important;
+    }
+    & li:hover {
+      background-color: $item-hover-color!important;
+    }
+  }
+
+}
+
+// 主内容区样式
+.main {
+  margin-left: 220px;
+  padding: 20px;
+  overflow: auto;
+  height: 100vh;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  box-sizing: border-box;
+
+  &.hideNavBar { //折叠
+    margin-left: 64px;
+  }
+
+  &.phoneNav { //手机端样式
+    margin-left: 0px;
+    padding: 5px;
+  }
+}
+
+.phone-popper {
+  padding: 0;
+}
+
