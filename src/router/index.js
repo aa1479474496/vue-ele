@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -48,7 +47,7 @@ export const constantRouterMap = [
       { path: 'table3', name: 'table3', meta: { title: 'table3' }, component: () => import('@/components/table/table3.vue') },
     ]
   },
-  { path: '*', component: () => import('@/components/test/404.vue'), hidden: true },
+  { path: '*', component: () => import('@/components/404.vue'), hidden: true },
 ]
 
 export const asyncRouterMap = [
@@ -77,7 +76,7 @@ export const asyncRouterMap = [
       { path: 'table3', name: 'table3', component: () => import('@/components/table/table3.vue') },
     ]
   },
-  { path: '*', component: () => import('@/components/test/404.vue'), hidden: true },
+  { path: '*', component: () => import('@/components/404.vue'), hidden: true },
 ]
 
 
