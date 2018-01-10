@@ -2,7 +2,7 @@
   <div class='main' :class="siderClass">
     <nav-header></nav-header>
     <bread-crumb />
-    <div class="aa">
+    <div>
       <router-view/>
     </div>
   </div>
@@ -19,8 +19,6 @@
     },
     computed: {
       ...mapGetters([
-        // 'hideNavBar',
-        // 'phoneNav',
         'siderClass'
       ])
     },
@@ -30,5 +28,4 @@
 </script>
 
 <style lang="scss" scoped>
-  
 </style>

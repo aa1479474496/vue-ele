@@ -21,8 +21,6 @@
     },
     computed: {
       ...mapGetters([
-        // 'phoneNav',
-        // 'hideNavBar',
         'siderClass'
       ])
     },
@@ -34,24 +32,17 @@
         tid = setTimeout(() => {
           let w = window.innerWidth;
           if (w < 769) {
-            if (self.siderClass!=='phoneNav') {
-              // self.$store.dispatch('phoneNav', true)
-              // self.$store.dispatch('isNavbar', false)
+            if (self.siderClass !== 'phoneNav') {
               self.$store.dispatch('changeWindowWidth', 'phoneNav')
             }
           }
           else if (w < 1300) {
-            if (self.siderClass!=='foldNav') {
-              // self.$store.dispatch('isNavbar', true)
-              // self.$store.dispatch('phoneNav', false)
+            if (self.siderClass !== 'foldNav') {
               self.$store.dispatch('changeWindowWidth', 'foldNav')
             }
-
           }
           else {
             if (self.siderClass) {
-              // self.$store.dispatch('isNavbar', false)
-              // self.$store.dispatch('phoneNav', false)
               self.$store.dispatch('changeWindowWidth', '')
             }
           }

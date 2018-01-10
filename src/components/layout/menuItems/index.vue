@@ -23,7 +23,6 @@
     computed: {
       ...mapGetters([
         'routers',
-        'hideNavBar',
         'siderClass'
       ]),
       isCollapse() {

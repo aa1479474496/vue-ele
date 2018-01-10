@@ -8,7 +8,6 @@ import Layout from '@/components/layout/Layout'
 
 export const constantRouterMap = [
   { path: '/test1', component: () => import('@/components/test/test1.vue'), hidden: true },
-  // { path: '/', name: 'home', component: () => import('@/components/home/Home.vue')},
   {
     path: '',
     component: Layout,
