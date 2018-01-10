@@ -1,19 +1,24 @@
 
 let w = window.innerWidth
-let phoneNav, hideNavBar
+let phoneNav, hideNavBar, siderClass
 
 if (w < 769) {
   phoneNav = true
+  siderClass = 'phoneNav'
 }
 else if (w < 1300) {
   hideNavBar = true
+  siderClass = 'foldNav'
+}
+else {
+  siderClass = ''
 }
 
 
 const state = {
   phoneNav,
   hideNavBar,
-  siderClass: ''
+  siderClass
 }
 
 const getters = {

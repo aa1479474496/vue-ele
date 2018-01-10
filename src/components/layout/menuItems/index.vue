@@ -2,10 +2,9 @@
   <div>
     <div class="self-menus">
       <transition name="el-zoom-in-top">
-        <el-menu mode="vertical" :default-active="$route.path" :collapse="hideNavBar" class="el-menu-vertical-demo" background-color="#303641"
+        <el-menu mode="vertical" :default-active="$route.path" :collapse="isCollapse" class="el-menu-vertical-demo" background-color="#303641"
           text-color="#fff">
           <menu-items :routeitems="routers"></menu-items>
-
         </el-menu>
       </transition>
 
@@ -24,14 +23,14 @@
     computed: {
       ...mapGetters([
         'routers',
-        'hideNavBar'
+        'hideNavBar',
+        'siderClass'
       ]),
-      // isCollapse() {
-      //   return !this.sidebar.opened
-      // }
+      isCollapse() {
+        return this.siderClass === 'foldNav'
+      }
     },
     mounted() {
-      // console.log(this.routers);
     },
     methods: {
       // handleOpen(key, keyPath) {

@@ -19,8 +19,8 @@
     },
     computed: {
       ...mapGetters([
-        'hideNavBar',
-        'phoneNav',
+        // 'hideNavBar',
+        // 'phoneNav',
         'siderClass'
       ])
     },
