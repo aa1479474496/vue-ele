@@ -28,6 +28,8 @@
         'hideNavBar',
       ])
     },
+    mounted() {
+    }
   }
 </script>
 

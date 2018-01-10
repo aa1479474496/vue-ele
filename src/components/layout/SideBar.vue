@@ -36,12 +36,14 @@
             if (!self.phoneNav) {
               self.$store.dispatch('phoneNav', true)
               self.$store.dispatch('isNavbar', false)
+              self.$store.dispatch('changeWindowWidth', 'phoneNav')
             }
           }
           else if (w < 1300) {
             if (!self.hideNavBar) {
               self.$store.dispatch('isNavbar', true)
               self.$store.dispatch('phoneNav', false)
+              self.$store.dispatch('changeWindowWidth', 'foldNav')
             }
 
           }
@@ -49,6 +51,7 @@
             if (self.hideNavBar || self.phoneNav) {
               self.$store.dispatch('isNavbar', false)
               self.$store.dispatch('phoneNav', false)
+              self.$store.dispatch('changeWindowWidth', '')
             }
           }
         }, 300);

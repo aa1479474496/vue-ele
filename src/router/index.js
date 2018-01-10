@@ -50,7 +50,6 @@ export const constantRouterMap = [
     ]
   },
   { path: '*', component: () => import('@/components/test/404.vue'), hidden: true },
-  // { path: '*', component: () => import('@/components/test/404.vue'), hidden: true },
 ]
 
 export const asyncRouterMap = [

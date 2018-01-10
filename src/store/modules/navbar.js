@@ -13,11 +13,13 @@ else if (w < 1300) {
 const state = {
   phoneNav,
   hideNavBar,
+  siderClass: ''
 }
 
 const getters = {
   phoneNav: state => state.phoneNav,
   hideNavBar: state => state.hideNavBar,
+  siderClass: state => state.siderClass,
 }
 
 
@@ -30,6 +32,9 @@ const mutations = {
   ['IS_NAV_BAR'](state, data) {
     state.hideNavBar = data
   },
+  ['SIDER_CLASS'](state, data) {
+    state.siderClass = data
+  },
 
 }
 const actions = {
@@ -40,9 +45,8 @@ const actions = {
     return commit('IS_NAV_BAR', data)
   },
   changeWindowWidth({ commit }, data) {
-    return commit('CHANGE_WINDOW_WIDTH', data)
+    return commit('SIDER_CLASS', data)
   }
-
 }
 
 export default {
