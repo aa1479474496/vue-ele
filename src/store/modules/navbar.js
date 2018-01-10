@@ -11,13 +11,11 @@ else if (w < 1300) {
 
 
 const state = {
-  isFold: w < 769,
   phoneNav,
   hideNavBar,
 }
 
 const getters = {
-  isFold: state => state.isFold,
   phoneNav: state => state.phoneNav,
   hideNavBar: state => state.hideNavBar,
 }
@@ -32,12 +30,7 @@ const mutations = {
   ['IS_NAV_BAR'](state, data) {
     state.hideNavBar = data
   },
-  ['CHANGE_WINDOW_WIDTH'](state, data) {
-    state.isFold = data
-  },
-  ['TOGGLE_FOLD'](state) {
-    state.isFold = !state.isFold
-  }
+
 }
 const actions = {
   phoneNav({ commit }, data) {
@@ -48,10 +41,8 @@ const actions = {
   },
   changeWindowWidth({ commit }, data) {
     return commit('CHANGE_WINDOW_WIDTH', data)
-  },
-  toggleFold({ commit }) {
-    return commit('TOGGLE_FOLD')
   }
+
 }
 
 export default {
