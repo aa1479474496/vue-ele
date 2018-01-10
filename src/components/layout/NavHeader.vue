@@ -3,7 +3,7 @@
     <el-popover ref="popover4" popper-class="phone-popper" transition="fade-in-linear" placement="bottom-start" :visible-arrow="arrowShow" width="220" trigger="click" v-if="phoneNav">
       <menu-items></menu-items>
     </el-popover>
-    <i class="el-icon-tickets toggle-show" v-if="phoneNav" v-popover:popover4></i>
+    <i class="el-icon-tickets toggle-show" v-if="siderClass=='phoneNav'" v-popover:popover4></i>
     Header
   </h1>
 </template>
@@ -26,6 +26,7 @@
         'routers',
         'phoneNav',
         'hideNavBar',
+        'siderClass'
       ])
     },
     mounted() {
