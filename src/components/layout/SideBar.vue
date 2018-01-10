@@ -1,5 +1,5 @@
 <template>
-  <div class='sider' :class="{hideNavBar: hideNavBar, phoneNav: phoneNav}">
+  <div class='sider' :class="siderClass">
     <div class="logo">
       <img src="../../assets/logo.png" alt="">
     </div>
@@ -23,6 +23,7 @@
       ...mapGetters([
         'phoneNav',
         'hideNavBar',
+        'siderClass'
       ])
     },
     mounted() {

@@ -1,5 +1,5 @@
 <template>
-  <div class='main' :class="{hideNavBar: hideNavBar, phoneNav: phoneNav}">
+  <div class='main' :class="siderClass">
     <nav-header></nav-header>
     <bread-crumb />
     <div class="aa">
@@ -20,7 +20,8 @@
     computed: {
       ...mapGetters([
         'hideNavBar',
-        'phoneNav'
+        'phoneNav',
+        'siderClass'
       ])
     },
     mounted() {

@@ -27,7 +27,7 @@ $item-hover-color: #ee473c; // 展开栏hover背景色
     overflow: hidden;
   }
 
-  &.hideNavBar {
+  &.foldNav {
     width: 64px;
     // overflow: hidden;
     .submenu-title-noDropdown {
@@ -177,7 +177,7 @@ $item-hover-color: #ee473c; // 展开栏hover背景色
   transition: all 0.3s ease-out;
   box-sizing: border-box;
 
-  &.hideNavBar { //折叠
+  &.foldNav { //折叠
     margin-left: 64px;
   }
 
