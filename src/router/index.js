@@ -33,6 +33,17 @@ export const constantRouterMap = [
     }]
   },
   {
+    path: '/form',
+    component: Layout,
+    redirect: 'noredirect',
+    children: [{
+      path: '',
+      component: () => import('@/components/form/form.vue'),
+      name: 'form',
+      meta: { title: 'form', icon: 'el-icon-message' }
+    }]
+  },
+  {
     path: '/table',
     name: 'table',
     redirect: 'noredirect',

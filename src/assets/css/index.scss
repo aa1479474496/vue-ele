@@ -4,7 +4,9 @@ $sider-bac-color: #303641; //侧边栏背景色， 深蓝色
 $menuitem-bac-color: #282c37; //侧边栏展开背景色，， 更深蓝
 $item-hover-color: #ee473c; // 展开栏hover背景色
 
-
+body {
+  overflow-x: hidden;
+}
 
 .sider {
   width: 220px;
@@ -191,3 +193,6 @@ $item-hover-color: #ee473c; // 展开栏hover背景色
   padding: 0;
 }
 
+.selflabel label {
+  color: #f00;
+}
