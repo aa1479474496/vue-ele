@@ -24,27 +24,48 @@ const re = [
   },
 ]
 
-const arrayToTree = (array) => {
-  let result = [], hash = {}, children = 'children'
-  array.forEach((item, index) => {
+const arrayToTree = array => {
+  let result = [], hash = {}, children = 'children';
+
+  array.map(item => {
     hash[item.id] = item
   })
 
-  array.forEach((item, index) => {
-    let mpid = item.mpid
-    if (mpid === '0') {
+  array.map((item, index) => {
+    if (item.mpid == 0) {
       result.push(item)
     }
     else {
-      let hashvp = hash[item.mpid]
-      // console.log(hashvp);
-      if (!hashvp[children]) {
-        hashvp[children] = []
+      if (!hash[item.mpid][children]) {
+        hash[item.mpid][children] = []
       }
-      hashvp[children].push(item)
+      hash[item.mpid][children].push(item)
     }
   })
+
   return result
-  // console.log(result);
+
+  // console.log(hash);
 }
-console.log(arrayToTree(arr));
+
+// console.log(arrayToTree(arr));
+
+
+
+var str = 'adffsdfdsfsfssss';
+var o = {};
+
+for(var i = 0; i < str.length; i++) {
+  var v = str.charAt(i);
+  if (o[v] && o[v].value == v) {
+    o[v].count = ++ o[v].count
+  }else {
+    o[v] = {};
+    o[v].value = v;
+    o[v].count = 1
+  }
+}
+console.log(o);
+
+
+
