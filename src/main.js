@@ -8,15 +8,17 @@ import router from './router'
 import store from './store/index'
 
 import '@/assets/css/index.scss'
-
-
+import lazyload from '@/components/common/directive.js'
+lazyload();
 import './permission'
 
 Vue.use(ElementUI)
-
+// Vue.use(lazyload)
 
 Vue.config.productionTip = false
-
+window.onscroll = function () {
+  lazyload();
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
